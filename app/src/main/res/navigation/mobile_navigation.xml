@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_watch_dress">
         <argument
             android:name="model"
-            app:argType="com.kolis.movies_app.data.DressModel" />
+            app:argType="com.kolis.movies_app.data.MovieModel" />
     </fragment>
 
     <fragment

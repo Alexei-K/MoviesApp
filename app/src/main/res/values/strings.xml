@@ -6,8 +6,9 @@
     <string name="title_profile">Profile</string>
 
     <!--    InfoFragment-->
-    <string name="welcome_to_fluxstore">Welcome to Fluxstore </string>
+    <string name="welcome_to_fluxstore">Welcome to KMovies</string>
     <string name="register_screen_text">Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit</string>
+    <string name="welcome_to_register">You are welcome to register. Even though, it is not obligatory.</string>
     <string name="second_register_screen_title">Lorconsectetur adipisicing</string>
     <string name="skip">Skip ></string>
     <string name="time_remain_zero_days">Remain: %dh:%dm</string>
@@ -18,6 +19,7 @@
     <string name="you_are_registered">You are registered</string>
     <string name="login_password">Login: %s \nPassword: %s</string>
     <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="copied_to_clipboard">Your login and password were copied to clipboard</string>
     <string name="password_is_wrong">Wrong password or user name.</string>
     <string name="login">Login</string>
     <string name="enter_login">Enter login and password</string>

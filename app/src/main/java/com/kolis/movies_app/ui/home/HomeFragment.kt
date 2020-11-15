@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import com.kolis.movies_app.R
-import com.kolis.movies_app.data.DressRepositoryImpl
+import com.kolis.movies_app.data.MovieRepositoryImpl
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : Fragment() {
@@ -30,8 +30,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter.controller = Navigation.findNavController(view)
-        val db = DressRepositoryImpl()
-        db.allDressesLD.observe(viewLifecycleOwner, Observer {
+        val db = MovieRepositoryImpl()
+        db.allDresses().observe(viewLifecycleOwner, Observer {
             adapter.setModelsList(it)
         })
         view.recipesRecycleView.adapter = adapter

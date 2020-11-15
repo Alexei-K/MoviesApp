@@ -15,6 +15,6 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintTop_toTopOf="parent"
         app:spanCount="2"
-        tools:listitem="@layout/product_item_view" />
+        tools:listitem="@layout/movie_item_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

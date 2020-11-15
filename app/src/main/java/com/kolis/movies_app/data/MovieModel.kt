@@ -6,7 +6,7 @@ import com.kolis.movies_app.R
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class DressModel(
+data class MovieModel(
     val id: Int,
     val name: String,
     val oldPrice: Float,
@@ -40,62 +40,62 @@ data class DressModel(
          * Sample data used to upload it on server or local testing
          */
         val sampleList = arrayListOf(
-            DressModel(
+            MovieModel(
                 0, "Scaridian dress", 100.00f, 50.00f, false, 80, 83, 1602798596177,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "Spain"
             ),
-            DressModel(
+            MovieModel(
                 1, "Wool dress", 200.00f, 180.00f, false, 100, 12, 1602885996177,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "China"
             ),
-            DressModel(
+            MovieModel(
                 2, "Cream cotton dress", 150.00f, 100.00f, true, 120, 28, 1602962396177,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "Ukraine"
             ),
-            DressModel(
+            MovieModel(
                 3, "Black dress", 120.00f, 120.00f, true, 2, 1, 7,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "Spain"
             ),
-            DressModel(
+            MovieModel(
                 4, "Scaridian dress", 120.00f, 50.00f, false, 40, 24, 7,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "Spain"
             ),
-            DressModel(
+            MovieModel(
                 5, "Black dress", 1000.00f, 250.00f, true, 45, 12, 7,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "China"
             ),
-            DressModel(
+            MovieModel(
                 6, "Scaridian dress", 20.00f, 20.00f, false, 54, 40, 1609796996177,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "Spain"
             ),
-            DressModel(
+            MovieModel(
                 7, "Wool dress", 160.00f, 16.00f, true, 80, 58, 7,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "China"
             ),
-            DressModel(
+            MovieModel(
                 8, "Scaridian dress", 120.00f, 120.00f, false, 100, 26, 1607890006177,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "Spain"
             ),
-            DressModel(
+            MovieModel(
                 9, "Wool dress", 120.00f, 50.00f, true, 120, 40, 7,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "Spain"
             ),
-            DressModel(
+            MovieModel(
                 10, "Scaridian dress", 160.00f, 50.00f, true, 80, 16, 7,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "Spain"
             ),
-            DressModel(
+            MovieModel(
                 1, "Black dress", 200.00f, 50.00f, false, 40, 40, 7,
                 listOf("small", "medium", "Large", "tiny", "XL", "XXL"), sampleColors,
                 sampleDesription, "578902-00", "Sweater", "Cotton", "Spain"
@@ -118,8 +118,8 @@ data class DressModel(
         val MATERIAL_CODE: String = "material"
         val COUNTRY_CODE: String = "country"
 
-        fun fromFirebaseDocument(document: QueryDocumentSnapshot): DressModel {
-            return DressModel(
+        fun fromFirebaseDocument(document: QueryDocumentSnapshot): MovieModel {
+            return MovieModel(
                 (document[ID_CODE] as Long).toInt(),
                 document[NAME_CODE] as String,
                 (document[OLD_PRICE_CODE] as Double).toFloat(),
