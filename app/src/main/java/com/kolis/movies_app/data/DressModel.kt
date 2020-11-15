@@ -1,8 +1,8 @@
-package com.kolis.test_catalog_app.data
+package com.kolis.movies_app.data
 
 import android.os.Parcelable
 import com.google.firebase.firestore.QueryDocumentSnapshot
-import com.kolis.test_catalog_app.R
+import com.kolis.movies_app.R
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

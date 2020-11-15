@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.ui.profile
+package com.kolis.movies_app.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.preference.PreferenceManager
-import com.kolis.test_catalog_app.R
-import com.kolis.test_catalog_app.util.PrefConstants
+import com.kolis.movies_app.R
+import com.kolis.movies_app.util.PrefConstants
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 class ProfileFragment : Fragment() {

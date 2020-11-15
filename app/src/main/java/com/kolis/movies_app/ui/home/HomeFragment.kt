@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.ui.home
+package com.kolis.movies_app.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
-import com.kolis.test_catalog_app.R
-import com.kolis.test_catalog_app.data.DressRepositoryImpl
+import com.kolis.movies_app.R
+import com.kolis.movies_app.data.DressRepositoryImpl
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : Fragment() {

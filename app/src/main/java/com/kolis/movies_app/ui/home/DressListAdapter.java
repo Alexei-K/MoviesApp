@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.ui.home;
+package com.kolis.movies_app.ui.home;
 
 import android.graphics.Paint;
 import android.view.LayoutInflater;
@@ -13,9 +13,8 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kolis.test_catalog_app.R;
-import com.kolis.test_catalog_app.data.DressModel;
-import com.kolis.test_catalog_app.data.DressRepositoryImpl;
+import com.kolis.movies_app.R;
+import com.kolis.movies_app.data.DressModel;
 
 import java.util.ArrayList;
 

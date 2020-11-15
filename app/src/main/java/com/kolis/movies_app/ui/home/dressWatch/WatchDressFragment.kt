@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.ui.home.dressWatch
+package com.kolis.movies_app.ui.home.dressWatch
 
 import android.graphics.Paint
 import android.os.Bundle
@@ -9,8 +9,8 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
-import com.kolis.test_catalog_app.R
-import com.kolis.test_catalog_app.data.DressModel
+import com.kolis.movies_app.R
+import com.kolis.movies_app.data.DressModel
 import kotlinx.android.synthetic.main.fragment_watch_dress.*
 import java.util.*
 

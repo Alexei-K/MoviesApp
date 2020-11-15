@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app
+package com.kolis.movies_app
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

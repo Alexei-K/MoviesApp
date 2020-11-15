@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.data;
+package com.kolis.movies_app.data;
 
 import android.util.Log;
 
@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.kolis.test_catalog_app.ui.start_info.OnPasswordCheckObserver;
+import com.kolis.movies_app.ui.start_info.OnPasswordCheckObserver;
 
 import java.util.ArrayList;
 import java.util.Date;

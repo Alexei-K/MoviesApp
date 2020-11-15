@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.ui.start_info;
+package com.kolis.movies_app.ui.start_info;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +13,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kolis.test_catalog_app.R;
+import com.kolis.movies_app.R;
 
 public class StartInfoFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.ui.home
+package com.kolis.movies_app.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

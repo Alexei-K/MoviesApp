@@ -1,11 +1,11 @@
-package com.kolis.test_catalog_app.ui
+package com.kolis.movies_app.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.kolis.test_catalog_app.R
+import com.kolis.movies_app.R
 
 class EmptyFragment : Fragment() {
 

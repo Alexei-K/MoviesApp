@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.ui.start_info;
+package com.kolis.movies_app.ui.start_info;
 
 import android.app.AlertDialog;
 import android.content.ClipData;
@@ -19,14 +19,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.PreferenceManager;
 
-import com.kolis.test_catalog_app.MainActivity;
-import com.kolis.test_catalog_app.R;
-import com.kolis.test_catalog_app.data.DressRepositoryImpl;
-import com.kolis.test_catalog_app.util.PasswordGenerator;
+import com.kolis.movies_app.MainActivity;
+import com.kolis.movies_app.R;
+import com.kolis.movies_app.data.DressRepositoryImpl;
+import com.kolis.movies_app.util.PasswordGenerator;
 
-import static com.kolis.test_catalog_app.util.PrefConstants.IS_LOGGED_PREF;
-import static com.kolis.test_catalog_app.util.PrefConstants.USER_NAME_PREF;
-import static com.kolis.test_catalog_app.util.PrefConstants.USER_PASSWORD_PREF;
+import static com.kolis.movies_app.util.PrefConstants.IS_LOGGED_PREF;
+import static com.kolis.movies_app.util.PrefConstants.USER_NAME_PREF;
+import static com.kolis.movies_app.util.PrefConstants.USER_PASSWORD_PREF;
 
 public class StartInfoLastFragment extends StartInfoFragment implements OnPasswordCheckObserver {
 

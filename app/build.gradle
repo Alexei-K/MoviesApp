@@ -11,7 +11,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.kolis.test_catalog_app"
+        applicationId "com.kolis.movies_app"
         minSdkVersion 22
         targetSdkVersion 29
         versionCode 1

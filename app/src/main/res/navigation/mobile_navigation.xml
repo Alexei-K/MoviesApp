@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.kolis.test_catalog_app.ui.home.HomeFragment"
+        android:name="com.kolis.movies_app.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -17,27 +17,27 @@
 
     <fragment
         android:id="@+id/navigation_watch_dress"
-        android:name="com.kolis.test_catalog_app.ui.home.dressWatch.WatchDressFragment"
+        android:name="com.kolis.movies_app.ui.home.dressWatch.WatchDressFragment"
         tools:layout="@layout/fragment_watch_dress">
         <argument
             android:name="model"
-            app:argType="com.kolis.test_catalog_app.data.DressModel" />
+            app:argType="com.kolis.movies_app.data.DressModel" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.kolis.test_catalog_app.ui.EmptyFragment"
+        android:name="com.kolis.movies_app.ui.EmptyFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_empty" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.kolis.test_catalog_app.ui.EmptyFragment"
+        android:name="com.kolis.movies_app.ui.EmptyFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_empty" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.kolis.test_catalog_app.ui.profile.ProfileFragment"
+        android:name="com.kolis.movies_app.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

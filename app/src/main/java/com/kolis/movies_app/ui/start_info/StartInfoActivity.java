@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.ui.start_info;
+package com.kolis.movies_app.ui.start_info;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,9 +14,9 @@ import androidx.preference.PreferenceManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.kolis.test_catalog_app.MainActivity;
-import com.kolis.test_catalog_app.R;
-import com.kolis.test_catalog_app.util.PrefConstants;
+import com.kolis.movies_app.MainActivity;
+import com.kolis.movies_app.R;
+import com.kolis.movies_app.util.PrefConstants;
 
 import static androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_SET_USER_VISIBLE_HINT;
 

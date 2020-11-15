@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.util;
+package com.kolis.movies_app.util;
 
 public class PrefConstants {
 

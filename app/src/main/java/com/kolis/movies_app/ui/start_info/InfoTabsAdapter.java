@@ -1,4 +1,4 @@
-package com.kolis.test_catalog_app.ui.start_info;
+package com.kolis.movies_app.ui.start_info;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

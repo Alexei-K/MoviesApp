@@ -1,8 +1,8 @@
-package com.kolis.test_catalog_app.data;
+package com.kolis.movies_app.data;
 
 import androidx.lifecycle.LiveData;
 
-import com.kolis.test_catalog_app.ui.start_info.OnPasswordCheckObserver;
+import com.kolis.movies_app.ui.start_info.OnPasswordCheckObserver;
 
 import java.util.ArrayList;
 

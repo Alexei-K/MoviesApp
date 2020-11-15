@@ -1,11 +1,11 @@
-package com.kolis.test_catalog_app.ui.profile
+package com.kolis.movies_app.ui.profile
 
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel
 import androidx.preference.PreferenceManager
-import com.kolis.test_catalog_app.ui.start_info.StartInfoActivity
-import com.kolis.test_catalog_app.util.PrefConstants
+import com.kolis.movies_app.ui.start_info.StartInfoActivity
+import com.kolis.movies_app.util.PrefConstants
 
 class ProfileViewModel : ViewModel() {
     fun onLeaveProfile(fragment: ProfileFragment) {
