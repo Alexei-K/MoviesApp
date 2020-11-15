@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1007656772296",
+    "firebase_url": "https://test-dress-project.firebaseio.com",
+    "project_id": "test-dress-project",
+    "storage_bucket": "test-dress-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007656772296:android:f81c36c9f170645ad97bfd",
+        "android_client_info": {
+          "package_name": "com.kolis.test_catalog_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007656772296-a6ojjta6k7pje8ckk1sk45p3ppl06ebq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRvc4NOB5D2zfhGTHPEQ6rxPqRkSVwAjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007656772296-a6ojjta6k7pje8ckk1sk45p3ppl06ebq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/product_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/image_test"
+        app:layout_constraintBottom_toTopOf="@id/productName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/likePhoto"
+        android:layout_width="22dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="11dp"
+        android:src="@drawable/like"
+        app:layout_constraintEnd_toEndOf="@id/product_photo"
+        app:layout_constraintTop_toTopOf="@id/product_photo" />
+
+    <TextView
+        android:id="@+id/productName"
+        style="@style/sanSerifDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/priceActual"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_photo"
+        tools:text="Scaridian dress" />
+
+    <TextView
+        android:id="@+id/priceActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="@font/roboto"
+        android:letterSpacing="0.02"
+        android:textColor="@color/dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productName"
+        tools:text="$ 50.00" />
+
+    <TextView
+        android:id="@+id/priceOld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="@font/roboto"
+        android:letterSpacing="0.02"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/grey_price"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/priceActual"
+        app:layout_constraintStart_toEndOf="@id/priceActual"
+        app:layout_constraintTop_toTopOf="@id/priceActual"
+        tools:text="$ 100.00" />
+
+    <RatingBar
+        android:id="@+id/rating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:stepSize="0.1"
+        android:theme="@style/RatingBar"
+        app:layout_constraintBottom_toTopOf="@id/timeRemaining"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceActual"
+        tools:rating="3" />
+
+    <TextView
+        android:id="@+id/numberOfMarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/rating"
+        app:layout_constraintStart_toEndOf="@id/rating"
+        app:layout_constraintTop_toTopOf="@id/rating"
+        tools:text="(9)" />
+
+    <TextView
+        android:id="@+id/timeRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@id/timeRemaining"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceActual"
+        tools:text="Remain: 2 days 10h:24m" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

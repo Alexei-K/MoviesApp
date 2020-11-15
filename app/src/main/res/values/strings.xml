@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Catalog app</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+
+    <!--    InfoFragment-->
+    <string name="welcome_to_fluxstore">Welcome to Fluxstore </string>
+    <string name="register_screen_text">Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit</string>
+    <string name="second_register_screen_title">Lorconsectetur adipisicing</string>
+    <string name="skip">Skip ></string>
+    <string name="time_remain_zero_days">Remain: %dh:%dm</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+
+    <!--    Password dialog-->
+    <string name="you_are_registered">You are registered</string>
+    <string name="login_password">Login: %s \nPassword: %s</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="password_is_wrong">Wrong password or user name.</string>
+    <string name="login">Login</string>
+    <string name="enter_login">Enter login and password</string>
+
+    <string name="leave_profile">Leave profile</string>
+
+    <!--    watch dress card-->
+    <string name="add_to_cart">ADD TO CART</string>
+    <string name="size">Size</string>
+    <string name="color">Color</string>
+    <string name="description">Description</string>
+    <string name="product_code">Product Code: %s</string>
+    <string name="category">Category: %s</string>
+    <string name="material">Material: %s</string>
+    <string name="country">Country: %s</string>
+
+
+    <plurals name="time_remaining">
+        <item quantity="one">Remain: %d day, %dh:%dm</item>
+        <item quantity="other">Remain: %d days, %dh:%dm</item>
+    </plurals>
+
+    <string-array name="numberOfItems">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>
