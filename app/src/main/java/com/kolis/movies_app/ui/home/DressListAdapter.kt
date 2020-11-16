@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
-import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kolis.movies_app.R
 import com.kolis.movies_app.data.MovieModel
 import com.kolis.movies_app.ui.home.DressListAdapter.DressViewHolder
+import com.kolis.movies_app.util.PhotoUploader
 import java.util.*
 
 class DressListAdapter : RecyclerView.Adapter<DressViewHolder>() {
@@ -35,25 +35,17 @@ class DressListAdapter : RecyclerView.Adapter<DressViewHolder>() {
     }
 
     inner class DressViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var pictureIV: ImageView
-        var isLikedIV: ImageView
+        var moviePreview: ImageView
         var productNameTV: TextView
-        var newPriceTV: TextView
+        var description: TextView
         var numberOfVotesTV: TextView
-        var timeRemainingTV: TextView
         var ratingBar: RatingBar
         fun bind(model: MovieModel) {
 
-            //заглушка. Фото не отправляется на сервер и не получается с сервера.
-            pictureIV.setImageDrawable(
-                ResourcesCompat.getDrawable(
-                    itemView.resources,
-                    model.getTestImageResource(), null
-                )
-            )
+            PhotoUploader.uploadPhotoFromMoviesDb(model.poster_path, moviePreview)
 
             productNameTV.text = model.title
-
+            description.text = model.overview
             val votes = model.vote_count
             numberOfVotesTV.text = "(" + votes + ")"
             ratingBar.rating = model.vote_average
@@ -64,12 +56,10 @@ class DressListAdapter : RecyclerView.Adapter<DressViewHolder>() {
         }
 
         init {
-            pictureIV = itemView.findViewById(R.id.product_photo)
-            isLikedIV = itemView.findViewById(R.id.likePhoto)
-            productNameTV = itemView.findViewById(R.id.productName)
-            newPriceTV = itemView.findViewById(R.id.priceActual)
+            moviePreview = itemView.findViewById(R.id.movie_poster)
+            productNameTV = itemView.findViewById(R.id.movieName)
+            description = itemView.findViewById(R.id.movieDescription)
             numberOfVotesTV = itemView.findViewById(R.id.numberOfMarks)
-            timeRemainingTV = itemView.findViewById(R.id.timeRemaining)
             ratingBar = itemView.findViewById(R.id.rating)
         }
     }

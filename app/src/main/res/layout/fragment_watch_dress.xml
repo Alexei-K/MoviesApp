@@ -31,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/productName"
+            android:id="@+id/movieName"
             style="@style/sanSerifDark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:layout_marginTop="33dp"
             android:layout_marginBottom="8dp"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/priceActual"
+            app:layout_constraintBottom_toTopOf="@id/movieDescription"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dressImage"
             tools:text="Scaridian dress" />
@@ -56,11 +56,11 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/rating"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/productName"
+            app:layout_constraintTop_toBottomOf="@id/movieName"
             tools:text="$ 100.00" />
 
         <TextView
-            android:id="@+id/priceActual"
+            android:id="@+id/movieDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
@@ -86,7 +86,7 @@
             android:stepSize="0.1"
             android:theme="@style/RatingBar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/priceActual"
+            app:layout_constraintTop_toBottomOf="@id/movieDescription"
             tools:rating="3" />
 
         <TextView

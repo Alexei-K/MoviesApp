@@ -19,7 +19,7 @@ class MovieRepositoryImpl : MovieRepository {
     //In parent app Firebase was use to store items of list+passwords, now stores password
     var db = FirebaseFirestore.getInstance()
 
-    private val _allDresses = MutableLiveData<List<MovieModel>>()
+    private val _trendingMovies = MutableLiveData<List<MovieModel>>()
     override fun getTrendingMovies(): LiveData<List<MovieModel>> {
         RetrofitClient.getClient().create(RetrofitServices::class.java).getMovieTrending().enqueue(
             object : Callback<ResponseModel> {
@@ -28,11 +28,13 @@ class MovieRepositoryImpl : MovieRepository {
                 }
 
                 override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
-                    _allDresses.postValue(response.body() as List<MovieModel>)
+                    val movies = (response.body() as ResponseModel).movies.filter { it.title != "" && it.title != null }
+                    movies.forEach { it.vote_average /= 2 }
+                    _trendingMovies.postValue(movies)
 
                 }
             })
-        return _allDresses
+        return _trendingMovies
     }
 
 
