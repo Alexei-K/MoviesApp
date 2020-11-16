@@ -9,8 +9,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import com.kolis.movies_app.R
+import com.kolis.movies_app.data.MovieModel
 import com.kolis.movies_app.data.MovieRepositoryImpl
 import kotlinx.android.synthetic.main.fragment_home.view.*
+import java.util.*
 
 class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
@@ -31,8 +33,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter.controller = Navigation.findNavController(view)
         val db = MovieRepositoryImpl()
-        db.allDresses().observe(viewLifecycleOwner, Observer {
-            adapter.setModelsList(it)
+        db.getTrendingMovies().observe(viewLifecycleOwner, Observer {
+            adapter.setModelsList(it as ArrayList<MovieModel>)
         })
         view.recipesRecycleView.adapter = adapter
 

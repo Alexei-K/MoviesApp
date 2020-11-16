@@ -7,8 +7,11 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
-import com.kolis.movies_app.data.MovieModel.Companion.fromFirebaseDocument
+import com.kolis.movies_app.data.interfaces.RetrofitServices
 import com.kolis.movies_app.ui.start_info.OnPasswordCheckObserver
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 class MovieRepositoryImpl : MovieRepository {
@@ -16,39 +19,20 @@ class MovieRepositoryImpl : MovieRepository {
     //In parent app Firebase was use to store items of list+passwords, now stores password
     var db = FirebaseFirestore.getInstance()
 
-    private val _allDresses = MutableLiveData<ArrayList<MovieModel>>()
-    override fun getAllMovies(): LiveData<ArrayList<MovieModel>> {
-        db.collection(DRESS_COLLECTION_PATH)
-            .get()
-            .addOnCompleteListener { task: Task<QuerySnapshot> ->
-                if (task.isSuccessful) {
-                    val movieModels = ArrayList<MovieModel>()
-                    for (document in task.result!!) {
-                        Log.d(TAG, document.id + " => " + document.data)
-                        movieModels.add(fromFirebaseDocument(document))
-                    }
-                    _allDresses.postValue(movieModels)
-                } else {
-                    Log.w(TAG, "Error getting data from firebase.", task.exception)
+    private val _allDresses = MutableLiveData<List<MovieModel>>()
+    override fun getTrendingMovies(): LiveData<List<MovieModel>> {
+        RetrofitClient.getClient().create(RetrofitServices::class.java).getMovieTrending().enqueue(
+            object : Callback<ResponseModel> {
+                override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                    Log.d("AlexLog", t.localizedMessage + "\n" + t.stackTrace)
                 }
-            }
-        return _allDresses
-    }
 
-    override fun addDress(model: MovieModel) {
-        db.collection(DRESS_COLLECTION_PATH).add(model.toMap())
-            .addOnSuccessListener { documentReference: DocumentReference ->
-                Log.d(
-                    TAG,
-                    "DocumentSnapshot added with ID: " + documentReference.id
-                )
-            }
-            .addOnFailureListener { documentReference: Exception? ->
-                Log.d(
-                    TAG,
-                    "upload failed "
-                )
-            }
+                override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
+                    _allDresses.postValue(response.body() as List<MovieModel>)
+
+                }
+            })
+        return _allDresses
     }
 
 

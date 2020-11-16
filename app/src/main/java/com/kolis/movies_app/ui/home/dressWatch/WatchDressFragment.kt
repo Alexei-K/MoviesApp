@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
@@ -34,34 +33,34 @@ class WatchDressFragment : Fragment() {
     }
 
     private fun fillData() {
-        dressImage.setImageDrawable(
-            ResourcesCompat.getDrawable(
-                dressImage.resources,
-                movieModel.getTestImageResource(), null
-            )
-        )
-        productName.text = movieModel.name
-        setUpDiscountPrice()
-        numberOfMarks.text = "(" + movieModel.numberOfVotes.toInt() + ")"
-        rating.rating = movieModel.getAvgMark()
-        description.text = movieModel.description
-        productCode.text = getString(R.string.product_code, movieModel.productCode)
-        productCategory.text = getString(R.string.category, movieModel.category)
-        productMaterial.text = getString(R.string.material, movieModel.material)
-        productCountry.text = getString(R.string.country, movieModel.country)
-        sizeSpinner.adapter = SpinnerAdapter(
-            context, android.R.layout.simple_spinner_item,
-            movieModel.sizes.toTypedArray()
-        )
-        colorSpinner.adapter = SpinnerAdapter(
-            context, android.R.layout.simple_spinner_item,
-            movieModel.colors.map { it.first }.toTypedArray()
-        )
+//        dressImage.setImageDrawable(
+//            ResourcesCompat.getDrawable(
+//                dressImage.resources,
+//                movieModel.getTestImageResource(), null
+//            )
+//        )
+//        productName.text = movieModel.name
+//        setUpDiscountPrice()
+//        numberOfMarks.text = "(" + movieModel.numberOfVotes.toInt() + ")"
+//        rating.rating = movieModel.getAvgMark()
+//        description.text = movieModel.description
+//        productCode.text = getString(R.string.product_code, movieModel.productCode)
+//        productCategory.text = getString(R.string.category, movieModel.category)
+//        productMaterial.text = getString(R.string.material, movieModel.material)
+//        productCountry.text = getString(R.string.country, movieModel.country)
+//        sizeSpinner.adapter = SpinnerAdapter(
+//            context, android.R.layout.simple_spinner_item,
+//            movieModel.sizes.toTypedArray()
+//        )
+//        colorSpinner.adapter = SpinnerAdapter(
+//            context, android.R.layout.simple_spinner_item,
+//            movieModel.colors.map { it.first }.toTypedArray()
+//        )
 
     }
 
     private fun setUpDiscountPrice() {
-        priceActual.text = movieModel.newPrice.toString()
+//        priceActual.text = movieModel.newPrice.toString()
     }
 
     private fun initListeners() {
