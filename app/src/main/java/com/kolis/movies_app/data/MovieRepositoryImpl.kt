@@ -7,7 +7,12 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import com.kolis.movies_app.data.dataModels.ExtraMovieModel
+import com.kolis.movies_app.data.dataModels.MovieModel
 import com.kolis.movies_app.data.interfaces.RetrofitServices
+import com.kolis.movies_app.data.responseModels.MovieResponseModel
+import com.kolis.movies_app.data.responseModels.PeopleResponseModel
+import com.kolis.movies_app.data.responseModels.ReleaseAndGenresResponseModel
 import com.kolis.movies_app.ui.start_info.OnPasswordCheckObserver
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,23 +23,52 @@ class MovieRepositoryImpl : MovieRepository {
 
     //In parent app Firebase was use to store items of list+passwords, now stores password
     var db = FirebaseFirestore.getInstance()
-
+    val retrofitClient = RetrofitClient.getClient().create(RetrofitServices::class.java)
     private val _trendingMovies = MutableLiveData<List<MovieModel>>()
     override fun getTrendingMovies(): LiveData<List<MovieModel>> {
-        RetrofitClient.getClient().create(RetrofitServices::class.java).getMovieTrending().enqueue(
-            object : Callback<ResponseModel> {
-                override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+        retrofitClient.getMovieTrending().enqueue(
+            object : Callback<MovieResponseModel> {
+                override fun onFailure(call: Call<MovieResponseModel>, t: Throwable) {
                     Log.d("AlexLog", t.localizedMessage + "\n" + t.stackTrace)
                 }
 
-                override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
-                    val movies = (response.body() as ResponseModel).movies.filter { it.title != "" && it.title != null }
+                override fun onResponse(call: Call<MovieResponseModel>, movieResponse: Response<MovieResponseModel>) {
+                    val movies = (movieResponse.body() as MovieResponseModel).movies.filter { it.title != "" && it.title != null }
                     movies.forEach { it.vote_average /= 2 }
                     _trendingMovies.postValue(movies)
 
                 }
             })
         return _trendingMovies
+    }
+
+    override fun getExtraMovieInfo(id: Int): LiveData<ExtraMovieModel> {
+        val _extraInfoVM = MutableLiveData<ExtraMovieModel>().apply { value = ExtraMovieModel("", listOf(), listOf(), listOf()) }
+        retrofitClient.getMovieInfo(id = id).enqueue(object : Callback<ReleaseAndGenresResponseModel> {
+            override fun onFailure(call: Call<ReleaseAndGenresResponseModel>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<ReleaseAndGenresResponseModel>, movieResponse: Response<ReleaseAndGenresResponseModel>) {
+                if (movieResponse.isSuccessful) {
+                    val response = movieResponse.body() as ReleaseAndGenresResponseModel
+                    _extraInfoVM.postValue(_extraInfoVM.value?.copy(release_date = response.release_date!!, genres = response.genres!!))
+                }
+            }
+        })
+        retrofitClient.getMoviePeople(id = id).enqueue(object : Callback<PeopleResponseModel> {
+            override fun onFailure(call: Call<PeopleResponseModel>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<PeopleResponseModel>, movieResponse: Response<PeopleResponseModel>) {
+                if (movieResponse.isSuccessful) {
+                    val response = movieResponse.body() as PeopleResponseModel
+                    _extraInfoVM.postValue(_extraInfoVM.value?.copy(casts = response.cast!!, crew = response.crew!!))
+                }
+            }
+        })
+        return _extraInfoVM
     }
 
 

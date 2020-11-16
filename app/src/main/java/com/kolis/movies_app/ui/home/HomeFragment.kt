@@ -9,8 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import com.kolis.movies_app.R
-import com.kolis.movies_app.data.MovieModel
 import com.kolis.movies_app.data.MovieRepositoryImpl
+import com.kolis.movies_app.data.dataModels.MovieModel
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import java.util.*
 

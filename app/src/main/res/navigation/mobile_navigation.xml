@@ -17,11 +17,11 @@
 
     <fragment
         android:id="@+id/navigation_watch_dress"
-        android:name="com.kolis.movies_app.ui.home.dressWatch.WatchDressFragment"
-        tools:layout="@layout/fragment_watch_dress">
+        android:name="com.kolis.movies_app.ui.home.movieInfo.MovieInfoFragment"
+        tools:layout="@layout/fragment_movie_info">
         <argument
             android:name="model"
-            app:argType="com.kolis.movies_app.data.MovieModel" />
+            app:argType="com.kolis.movies_app.data.dataModels.MovieModel" />
     </fragment>
 
     <fragment

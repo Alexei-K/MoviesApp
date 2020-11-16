@@ -1,4 +1,4 @@
-package com.kolis.movies_app.ui.home.dressWatch
+package com.kolis.movies_app.ui.home.movieInfo
 
 import android.content.Context
 import android.widget.ArrayAdapter

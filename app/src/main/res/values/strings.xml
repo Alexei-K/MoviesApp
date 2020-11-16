@@ -27,14 +27,14 @@
     <string name="leave_profile">Leave profile</string>
 
     <!--    watch dress card-->
-    <string name="add_to_cart">ADD TO CART</string>
-    <string name="size">Size</string>
-    <string name="color">Color</string>
     <string name="description">Description</string>
-    <string name="product_code">Product Code: %s</string>
-    <string name="category">Category: %s</string>
-    <string name="material">Material: %s</string>
-    <string name="country">Country: %s</string>
+    <string name="directors">Director: %s</string>
+    <string name="casts">Casts: %s</string>
+    <string name="release_date">Release date: %s</string>
+    <plurals name="category">
+        <item quantity="one">Category: %s</item>
+        <item quantity="other">Categories: %s</item>
+    </plurals>
 
 
     <plurals name="time_remaining">

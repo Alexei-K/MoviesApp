@@ -1,4 +1,4 @@
-package com.kolis.movies_app.data
+package com.kolis.movies_app.data.dataModels
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

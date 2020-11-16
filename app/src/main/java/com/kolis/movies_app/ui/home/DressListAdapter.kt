@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kolis.movies_app.R
-import com.kolis.movies_app.data.MovieModel
+import com.kolis.movies_app.data.dataModels.MovieModel
 import com.kolis.movies_app.ui.home.DressListAdapter.DressViewHolder
 import com.kolis.movies_app.util.PhotoUploader
 import java.util.*

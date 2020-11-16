@@ -14,9 +14,9 @@
 
     <style name="watch_fragment_simple_text">
         <item name="fontFamily">@font/roboto</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">12sp</item>
-
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.02</item>
     </style>
 
     <style name="RatingBar" parent="Theme.AppCompat">
