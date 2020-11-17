@@ -24,8 +24,9 @@ class MovieRepositoryImpl : MovieRepository {
     //In parent app Firebase was use to store items of list+passwords, now stores password
     var db = FirebaseFirestore.getInstance()
     val retrofitClient = RetrofitClient.getClient().create(RetrofitServices::class.java)
-    private val _trendingMovies = MutableLiveData<List<MovieModel>>()
     override fun getTrendingMovies(page: Int): LiveData<List<MovieModel>> {
+         val _trendingMovies = MutableLiveData<List<MovieModel>>()
+
         retrofitClient.getMovieTrending(page = page).enqueue(
             object : Callback<MovieResponseModel> {
                 override fun onFailure(call: Call<MovieResponseModel>, t: Throwable) {
@@ -41,6 +42,24 @@ class MovieRepositoryImpl : MovieRepository {
             })
         return _trendingMovies
     }
+
+    override fun searchMovie(name: String): LiveData<List<MovieModel>> {
+        val _searchedMovies = MutableLiveData<List<MovieModel>>()
+
+        retrofitClient.getMovieSearch(name=name).enqueue(
+            object : Callback<MovieResponseModel> {
+                override fun onFailure(call: Call<MovieResponseModel>, t: Throwable) {
+                    Log.d("AlexLog", t.localizedMessage + "\n" + t.stackTrace)
+                }
+
+                override fun onResponse(call: Call<MovieResponseModel>, movieResponse: Response<MovieResponseModel>) {
+                    val movies = (movieResponse.body() as MovieResponseModel).movies.filter { it.title != "" && it.title != null }
+                    movies.forEach { it.vote_average /= 2 }
+                    _searchedMovies.postValue(movies)
+
+                }
+            })
+        return _searchedMovies    }
 
     override fun getExtraMovieInfo(id: Int): LiveData<ExtraMovieModel> {
         val _extraInfoVM = MutableLiveData<ExtraMovieModel>().apply { value = ExtraMovieModel("", listOf(), listOf(), listOf()) }

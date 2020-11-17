@@ -42,7 +42,7 @@ class MoviesListAdapter : RecyclerView.Adapter<DressViewHolder>() {
         var ratingBar: RatingBar
         fun bind(model: MovieModel) {
 
-            PhotoUploader.uploadPhotoFromMoviesDb(model.poster_path, moviePreview)
+            model.poster_path?.let{PhotoUploader.uploadPhotoFromMoviesDb(it, moviePreview)}
 
             productNameTV.text = model.title
             description.text = model.overview

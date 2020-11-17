@@ -22,6 +22,7 @@
     <string name="copied_to_clipboard">Your login and password were copied to clipboard</string>
     <string name="password_is_wrong">Wrong password or user name.</string>
     <string name="login">Login</string>
+    <string name="search">Search</string>
     <string name="enter_login">Enter login and password</string>
 
     <string name="leave_profile">Leave profile</string>

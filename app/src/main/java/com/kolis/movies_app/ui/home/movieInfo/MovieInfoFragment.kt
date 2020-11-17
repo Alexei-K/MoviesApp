@@ -43,7 +43,7 @@ class MovieInfoFragment : Fragment() {
     }
 
     private fun fillData() {
-        PhotoUploader.uploadPhotoFromMoviesDb(movieModel.poster_path, moviePreview)
+        movieModel.poster_path?.let { PhotoUploader.uploadPhotoFromMoviesDb(it, moviePreview) }
         movieName.text = movieModel.title
         description.text = movieModel.overview
         rating.rating = movieModel.vote_average

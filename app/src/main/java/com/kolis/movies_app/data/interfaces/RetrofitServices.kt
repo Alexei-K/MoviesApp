@@ -14,6 +14,9 @@ interface RetrofitServices {
     @GET("trending/movie/week")
     fun getMovieTrending(@Query("api_key") api_key: String = RetrofitClient.TOKEN_MOVIES, @Query("page") page: Int = 1): Call<MovieResponseModel>
 
+    @GET("search/movie")
+    fun getMovieSearch(@Query("api_key") api_key: String = RetrofitClient.TOKEN_MOVIES, @Query("query") name: String): Call<MovieResponseModel>
+
     @GET("movie/{id}")
     fun getMovieInfo(
         @Path("id") id: Int, @Query("api_key") api_key: String = RetrofitClient.TOKEN_MOVIES,
