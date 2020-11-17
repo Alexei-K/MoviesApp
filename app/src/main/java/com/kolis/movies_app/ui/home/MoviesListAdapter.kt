@@ -10,11 +10,11 @@ import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kolis.movies_app.R
 import com.kolis.movies_app.data.dataModels.MovieModel
-import com.kolis.movies_app.ui.home.DressListAdapter.DressViewHolder
+import com.kolis.movies_app.ui.home.MoviesListAdapter.DressViewHolder
 import com.kolis.movies_app.util.PhotoUploader
 import java.util.*
 
-class DressListAdapter : RecyclerView.Adapter<DressViewHolder>() {
+class MoviesListAdapter : RecyclerView.Adapter<DressViewHolder>() {
     private var dressList = ArrayList<MovieModel>()
     var controller: NavController? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DressViewHolder {

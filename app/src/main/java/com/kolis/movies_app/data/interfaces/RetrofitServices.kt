@@ -12,7 +12,7 @@ import retrofit2.http.Query
 interface RetrofitServices {
 
     @GET("trending/movie/week")
-    fun getMovieTrending(@Query("api_key") api_key: String = RetrofitClient.TOKEN_MOVIES): Call<MovieResponseModel>
+    fun getMovieTrending(@Query("api_key") api_key: String = RetrofitClient.TOKEN_MOVIES, @Query("page") page: Int = 1): Call<MovieResponseModel>
 
     @GET("movie/{id}")
     fun getMovieInfo(

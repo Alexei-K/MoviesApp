@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.RecyclerView
 import com.kolis.movies_app.R
 import com.kolis.movies_app.data.MovieRepositoryImpl
 import com.kolis.movies_app.data.dataModels.MovieModel
@@ -16,7 +17,9 @@ import java.util.*
 
 class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
-    private val adapter = DressListAdapter()
+    private val adapter = MoviesListAdapter()
+    private val pagaLoaded = 0
+    private val maxPages = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,10 +36,12 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter.controller = Navigation.findNavController(view)
         val db = MovieRepositoryImpl()
-        db.getTrendingMovies().observe(viewLifecycleOwner, Observer {
+        db.getTrendingMovies(1).observe(viewLifecycleOwner, Observer {
             adapter.setModelsList(it as ArrayList<MovieModel>)
         })
         view.recipesRecycleView.adapter = adapter
+        view.recipesRecycleView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 
+        })
     }
 }

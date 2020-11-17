@@ -25,8 +25,8 @@ class MovieRepositoryImpl : MovieRepository {
     var db = FirebaseFirestore.getInstance()
     val retrofitClient = RetrofitClient.getClient().create(RetrofitServices::class.java)
     private val _trendingMovies = MutableLiveData<List<MovieModel>>()
-    override fun getTrendingMovies(): LiveData<List<MovieModel>> {
-        retrofitClient.getMovieTrending().enqueue(
+    override fun getTrendingMovies(page: Int): LiveData<List<MovieModel>> {
+        retrofitClient.getMovieTrending(page = page).enqueue(
             object : Callback<MovieResponseModel> {
                 override fun onFailure(call: Call<MovieResponseModel>, t: Throwable) {
                     Log.d("AlexLog", t.localizedMessage + "\n" + t.stackTrace)
